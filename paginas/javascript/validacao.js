@@ -7,8 +7,8 @@ function validarCampos(compra){
     const dtNasc = compra.get("data-nasc");
     const numCel = compra.get("num-cel")
 
-    const teste = (validarCartao(numCard) || validarDtExp(validade) || validarCodSeg(codSeg)
-    || validarSSN(SSN) || validarDtNasc(dtNasc) || validarNumCel(numCel));
+    const teste = (validarCartao(numCard) && validarDtExp(validade) && validarCodSeg(codSeg)
+    && validarSSN(SSN) && validarDtNasc(dtNasc) && validarNumCel(numCel));
     
     return teste;
 }
