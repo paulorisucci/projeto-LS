@@ -1,0 +1,75 @@
+body {
+    background-color: #a46fc9;
+}
+.tela-inicial{
+    background-color: #a46fc9; ;
+}
+header{
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 60%, transparent),url('../Italia/img/Vaticano2.png');
+}
+
+.Rio{
+    order: 1;
+}
+
+.Sal{
+    order: 2;
+}
+
+.financeiro{
+    order: 3;
+}
+
+
+@media all and (max-width: 850px) {
+    .container{
+        flex-direction: column;
+    }
+
+    .container div{
+        margin: 1em;
+    }
+    .Rio{
+        order: 0;
+    }
+
+    .Sal{
+        order: 2;
+    }
+    i.fa-horse{
+        display: none;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .title h1{
+        margin: 0;
+        font-size: 3em;
+    }
+    .title h2{
+        font-size: 1em;
+    }
+    .bar{
+        display: none;
+    }
+    div.images{
+        width: 100%;
+        border-radius: 0px;
+        margin: 20px;
+        height: 60%;
+    }
+    img{
+        border-radius: 0px;
+    }
+}
+
+@media all and (max-width: 375px) {
+    img{
+        display: none;
+    }
+    .title h1{
+        margin: 0;
+        font-size: 2.5em;
+    }
+}
+

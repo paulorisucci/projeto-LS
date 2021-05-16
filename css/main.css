@@ -1,0 +1,231 @@
+body{
+    margin: 0px;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #222831;
+    color: #222831;
+    font-size: 20px;
+}
+a:link{
+    color: #222831;
+    text-decoration: none;
+    font-size: 1.4em;
+}
+a:visited{
+    color: #222831;
+}
+h1{
+    font-size: 3.5em;
+}
+h2{
+    font-size: 2.5em;
+}
+img{
+    width: 100%;
+    border-radius: 30%;
+    border: 3px solid  #222831;
+}
+header{
+    min-height: 100vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 40%, transparent),url("../imgs/mapa-mundi.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    color: white;
+    background-color: black;
+}
+div.header-content{
+    height: 540px;
+    opacity: 1;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+h1.title{
+    color: #e8e8e8;
+}
+.title{
+    text-align: center;
+    margin: 0px;
+    color: #ff5151;
+}
+.bar{
+    font-size: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 15%);
+    grid-template-areas: "label label label"
+                        "email password cadastrar";
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: #e8e8e8;
+    color: black;
+    padding: .5em 0 0 .5em;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5), 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.bar input{
+    width: 80%;
+    height: 3em;
+    padding: 0 1em 0 1em;
+    max-width: 172px;
+}
+#label{
+    grid-area: label;
+    margin-bottom: .5em;
+}
+#e-mail{
+    grid-area: email;
+}
+#password{
+    grid-area: password;
+}
+
+#cadastrar{
+    grid-area: cadastrar;
+    width: 10em;
+    margin-right: 3em;
+    margin-top: 2px;
+    transition: .3s;
+}
+#cadastrar:hover{
+    background-color: #222831;
+    color: white;
+}
+
+
+main{
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    margin: 3em;
+}
+div.content{
+    padding: 2em;
+    background-color: #30475e;
+    display: grid;
+    gap: 2em;
+    border-radius: 10px;
+    max-width: 1100px;
+}
+div.fotos{
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    justify-content: space-between;
+    gap: 2.5em;
+}
+div.descricao{
+    margin-top: 1em;
+    background-color: #E8E8E8;
+    padding: 2em;
+    border-radius: 10px;
+}
+div.next-page{
+    text-align: center;
+    padding: 2em;
+    border: 1px solid #222831;
+    border-radius: 10px;
+    background-color: #E8E8E8;
+    width: 50%;
+    justify-self: center;
+    transition: .4s;
+}
+div.next-page:hover a:link{
+    color: #e8e8e8;
+}
+.bottom {
+    text-align:center;
+    background: #000000;
+    padding: 1em;
+}
+.bottom p{
+    font-style: italic;
+    letter-spacing: 2px;
+    color: #E8E8E8;
+}
+div.social{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1em;
+    grid-auto-columns: auto;
+    justify-content: center;
+}
+i{
+    font-size: 2em;
+    color: #e8e8e8;
+    vertical-align: middle;
+}
+
+@media(max-width: 1300px){
+    .bar{
+        grid-template-columns:repeat(1,50%);
+        grid-template-areas: "label"
+                             "email"
+                             "password"
+                             "cadastrar";
+    }
+    #cadastrar{
+        margin: 0;
+    }
+    .bar input{
+        margin: .5em 0 .5em 0;
+    }
+}
+@media(max-width: 950px){
+    div.fotos{
+        grid-template-columns: repeat(1, auto);
+        justify-content: center;
+    }
+    div.descricao{
+        text-align: center;
+    }   
+}
+@media(max-width: 890px){
+    h1{
+        font-size: 2.5em;
+    }
+}
+
+@media(max-width:770px){
+    div.next-page#brasil{
+        background-color: rgb(211, 129, 102);
+    }
+    div.next-page#italia, div.next-page#italia a:visited{
+        background-color: #a46fc9;
+    }
+    
+    div.next-page#japao{
+        background-color: rgb(136, 153, 167);
+    }
+    i.fa-horse{
+        display: none;
+    }
+}
+@media(min-width: 770px){
+    div.next-page#brasil:hover{
+        background-color: rgb(211, 129, 102);
+    }
+    div.next-page#italia:hover{
+        background-color: #8545a7;
+    }
+    
+    div.next-page#japao:hover{
+        background-color: rgb(136, 153, 167);
+    }
+}
+@media(max-width: 375px){
+    div.descricao{
+        display: none;
+    }
+    img{
+        border-radius: 50%;
+    }
+    h1{
+        font-size: 2em;
+    }
+}

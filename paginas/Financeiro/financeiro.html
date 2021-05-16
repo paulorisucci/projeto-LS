@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="../src/style-financeiro.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+<body>
+    <div class="voltar"> <a href="../../index.html"> <i class="fas fa-arrow-alt-circle-left"></i></a></div>
+    <header id="topo">
+            <span class="logo">
+                <i class="fas fa-plane"></i>
+                Condencci's Tour 
+                <i class="fas fa-plane"></i>
+            </span>
+            <span class="secure">
+                <i class="fas fa-lock"></i>
+                <div>
+                    Safe <br>
+                    Environment
+                </div>
+            </span>
+    </header>
+    <main>
+        
+        <div class="form">
+            <form
+            id="cadastro">
+                <div class="opcoes">
+                    <h1>Tour duration</h1>
+                    <div>
+                        <label id="7" for="7d" class="lblop">7 days</label>
+                        <input type="radio" class="op" name="duration" value="7" id="7d" checked>    
+                    </div>
+                    <div>
+                        <label id="14" for="14d" class="lblop">14 days</label> 
+                        <input type="radio" class="op" name="duration" value="14" id="14d">
+                    </div>
+                    <div>
+                        <label id="30" for="30d" class="lblop">30 days</label>
+                        <input type="radio" class="op" name="duration" value="30" id="30d">    
+                    </div>
+                    <div>
+                        <label id="60" for="60d" class="lblop">60 days</label>
+                        <input type="radio" class="op" name="duration" value="60" id="60d">
+                    </div>
+                </div>
+
+                <div class="numero_cartao">
+                    <label for="numero">Card number</label> <br>
+                    <input type="text" name="numero_cartao" id="numero_cartao" placeholder="0000 0000 0000 0000" required>
+                </div>
+
+                <div class="Titular">
+                    <label for="titular">Card owner</label> <br>
+                    <input type="text" id="titular" name="titular" placeholder="Card owner's name" required>
+                </div>
+
+                <div class="validacao">
+                    <div class="validade">
+                        <label for="validade">Expiring date</label> <br>
+                        <input type="text" id="validade" name="validade" placeholder="MM/AA" required>
+                    </div>
+                    <div class="cod-seg">
+                        <label for="cod-seg">Security code</label> <br>
+                        <input type="text" id="cod-seg" name="cod-seg" placeholder="" required>
+                    </div>
+                </div>
+                <div class="num-parc">
+                    <label for="parc">Number of Installments</label> <br>
+                    <select name="num-parc" id="parc" required>
+                        <option value=""></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="CPF">
+                    <label for="cpf">SSN</label> <br>
+                    <input type="text" name="SSN" placeholder="XXX-XX-XXXX" required>  
+                </div>
+                <div class="pessoal">
+                    <div>
+                        <label for="data-nasc">Date of birth</label> <br>
+                        <input type="text" id="data-nasc" name = "data-nasc" required>
+                    </div>
+                    <div>
+                        <label for="celular">Phone number</label> <br>
+                        <input type="text" id="celular" name="num-cel" placeholder="(XX)XXXX-XXXX" required> 
+                    </div>
+                </div>
+                
+                <input type="submit" name="submit" value="Send" id="enviar">
+                <input type="reset" name="reset" value="Clear">
+            </form>            
+        </div>
+        <div id="registro" style="text-align: center;">
+            <h1 style="text-align: center;">Register</h1>
+            
+        </div>
+    
+
+    </main>
+
+    <footer class="bottom">
+        <p>
+            <i class="fas fa-horse" style="transform: scaleX(-1);"></i>
+                HORSE COPYRIGHT © 2020 - Por Pedro & Paulo
+                <i class="fas fa-horse"></i>
+        </p>
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
+        </div>
+    </footer>
+
+    <script src="../javascript/financeiro.js" type="module"></script>
+</body>
+</html>

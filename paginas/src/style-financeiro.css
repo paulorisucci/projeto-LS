@@ -1,0 +1,271 @@
+body{
+    background-color: #e4dddd;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+b{
+    display:contents;
+}
+
+div.topo{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 2em;
+}
+div.voltar{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 2em
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+span.logo, span.secure{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3em;
+    color: transparent;
+    position: relative;
+    color: transparent;
+}
+span.logo{
+    top: 1em;
+    left: 2em;
+    animation: aparecer 4s normal forwards;
+}
+span.secure{
+    top: .5em;
+    right: 4em;
+    text-align: center;
+    animation: aparecer 4s normal forwards;
+}
+
+main{
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+div.form{
+    text-align: center;
+    box-shadow: .1em .1em .7em #706f6faa;
+    background-color: #fafafa;
+    padding: 2em;
+}
+form > div{
+    margin: 1em;
+}
+form div{
+    border: 1px solid #706f6f40;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+form{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: space-around;
+    grid-template-areas: "opcoes opcoes";
+    gap: 1em;
+    padding: 1em;
+
+}
+.opcoes{
+    grid-area: opcoes;
+}
+div.opcoes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+div.opcoes h1{
+    width: 100%;
+}
+div.opcoes div{
+    border: none;
+    padding: 0;
+}
+.como{
+    font-size: 1.4em;
+    display: inline-block;
+    width: 100%;
+    grid-area: como;
+}
+input{
+    height: 2em;
+    width: 50%;
+    border: 1px solid#706f6f;
+    border-radius: 5px;
+    margin: .5em 0 .5em 0;
+}
+div.validacao{
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    gap: 1em;
+    padding: 0;
+    border: 0px;
+    justify-content: space-between;
+}
+
+div.num-parc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+h1#nomes{
+  font-size: 2em;
+}
+select#parc{
+    width: 50%;
+    height: 2em;
+}
+
+div.pessoal{
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    gap: 1em;
+}
+
+form > input{
+    margin: auto;
+    height: 3em;
+    color: white;
+    background-color: #532e1c90;
+}
+
+.bottom {
+    text-align:center;
+    padding: 1em;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.5), 0 0px 20px 0 rgba(0, 0, 0, 0.3);
+
+}
+
+.bottom p{
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+div.social{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1em;
+    grid-auto-columns: auto;
+    justify-content: center;
+}
+
+div#resumo{
+    padding: 1em;
+    font-size: 20px;
+    font-weight: bold;
+    display: grid;
+    max-width: 300px;
+    border-radius: 30px;
+    margin: auto;
+    color:#fafafa;
+    grid-template-columns: repeat(2, 50%);
+    text-align: center;
+    background-color: #393e46 ;
+}
+
+div#resumo div{
+    margin-top: .3em;
+    margin-bottom: .3em;
+}
+
+.bottom {
+    text-align:center;
+    padding: 1em;
+    background: transparent;
+    color: #706f6f;
+    box-shadow: none;
+}
+
+.bottom p{
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+div.social{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1em;
+    grid-auto-columns: auto;
+    justify-content: center;
+}
+footer i{
+    font-size: 2em;
+}
+
+footer a:link, a:visited{
+    color: #706f6f;
+}
+/*
+.spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    border-right-color: black;
+    animation: spinner 3s linear forwards;
+    top: 45vh;
+    left: 45vw;
+    position: fixed;
+}
+*/
+/*
+@keyframes spinner {
+    to {
+      transform: rotate(360deg);
+      border-right-color: transparent;
+      border: transparent;
+    }
+    
+}*/
+
+@keyframes aparecer{
+    to{
+        color: #532e1c;
+    }
+}
+
+@media(max-width: 650px){
+    
+header{
+    margin-bottom: 1em;
+}
+span.logo{
+    top: .1em;
+    left: .1em;
+    animation: aparecer .7s normal forwards;
+}
+span.secure{
+    top: .1em;
+    right: .1em;
+    text-align: center;
+    animation: aparecer 1s normal forwards;
+}
+    form{
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    justify-content: space-around;
+    grid-template-areas: "opcoes";
+    }
+    main{
+        padding: 0;
+    }
+    
+div.pessoal{
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: 1em;
+}
+}
