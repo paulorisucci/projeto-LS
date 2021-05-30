@@ -1,16 +1,9 @@
-import {createHeader, createBar, createMain, createFooter, header, bar, main, footer, japao, setValue, bars, mainJapao} from './main.js'
+import {header, bar, main, footer, financeiro, link, setValue, insertHeader, insertBar, insertMain, insertFooter} from './main.js'
 import storage from './localStorage.js'
 
+const japao = insertHeader(header, 2).then((japao) =>setValue(japao));
+insertBar(bar, 2);
+insertMain(main, 'mainJapao');
+insertFooter(footer);
 
-header.insertAdjacentHTML("afterbegin",createHeader(japao))
-bar.insertAdjacentHTML("afterbegin", createBar(bars[2], japao))
-
-setValue(japao)
-
-for(let i in mainJapao){
-    main.insertAdjacentHTML("afterbegin", createMain(mainJapao[i], i))
-}
-
-footer.insertAdjacentHTML("afterbegin",createFooter())
-
-link.addEventListener("onclick", storage.load(japao))
+link.addEventListener("onclick", storage.load(japao));

@@ -1,15 +1,9 @@
-import {createHeader, createBar, createMain, createFooter, header, bar, main, footer, brasil, setValue, link, bars, mainBrasil} from './main.js'
+import {header, bar, main, footer, financeiro, link, setValue, insertHeader, insertBar, insertMain, insertFooter} from './main.js'
 import storage from './localStorage.js'
 
-header.insertAdjacentHTML("afterbegin",createHeader(brasil))
-bar.insertAdjacentHTML("afterbegin", createBar(bars[0], brasil))
-
-setValue(brasil)
-
-for(let i in mainBrasil){
-    main.insertAdjacentHTML("afterbegin", createMain(mainBrasil[i], i))
-}
-
-footer.insertAdjacentHTML("afterbegin",createFooter())
+const brasil = insertHeader(header, 0).then((brasil) =>setValue(brasil));
+insertBar(bar, 0);
+insertMain(main, 'mainBrasil');
+insertFooter(footer);
 
 link.addEventListener("onclick", storage.load(brasil));

@@ -3,7 +3,6 @@ import validarCampos from './validacao.js'
 
 let flag = false
 const formCadastro = document.querySelector("#cadastro");
-
 const taxas = [0, 10, 20, 30];
 const paisComprado = storage.readAll('countries-app:countries');
 const precosFinais = taxas.map((Pt) => (1+(Pt/100))*paisComprado.price)
@@ -23,7 +22,6 @@ function opcaoSelecionada(opts) {
     }
   }
 }
-
 formCadastro.onsubmit = (e) => {
   if(flag == true) {
     alert("Você já realizou a compra.")
@@ -59,6 +57,7 @@ formCadastro.onsubmit = (e) => {
   criarResumo(registro);
   flag = true;
 };
+
 function criarResumo(registro) {
   const resumo = document.querySelector("#registro");
   const texto = `

@@ -1,24 +1,9 @@
 
-async function json(){
+async function jsonPaises(){
     const resposta = await fetch('/paginas/javascript/database.json');
     const json = await resposta.json();
     return json
 }
-
-json()
-    .then((json) => j = json)
-    .catch(console.log('Deu erro'));
-
-console.log(j)
-const brasil = j.headers[0]
-const italia = j.headers[1]
-const japao = j.headers[2]
-
-const bars = j.bars
-const headers = j.headers
-const mainBrasil = j.mainBrasil
-const mainItalia = j.mainItalia
-const mainJapao = j.mainJapao
 
 const header = document.querySelector("header#topo")
 const bar = document.querySelector(".container")
@@ -28,8 +13,10 @@ const financeiro = document.querySelector("#financeiro")
 const link = document.querySelector("#link") 
 
 
-function createHeader(header){
-    return `
+async function insertHeader(campo, posic){
+    const resposta = await jsonPaises();
+    const header = resposta.headers[posic];
+    const headerContent = `
     <div class="topo"><a href="#topo"><i class="fas fa-arrow-alt-circle-up"></i></a></div>
     <div class="voltar"> <a href="../../index.html"> <i class="fas fa-arrow-alt-circle-left"></i></a></div>
     <div class="title">
@@ -39,38 +26,51 @@ function createHeader(header){
         </h2>
     </div>
     `
+    campo.insertAdjacentHTML("beforeEnd", headerContent);
+    return header;
 }
-function createBar(bars){
-    return `
-            <div class="Rio"><a href="#1">${bars.content1}</a></div>
 
-            <div class="Sal"><a href="#3">${bars.content2}</a></div>
-            
-            <div class="Br"><a href="#2">${bars.content3}</a></div>
-        `
+async function insertBar(campo, posic){
+    const resposta = await jsonPaises();
+    const bars = resposta.bars;
+    const bar = bars[posic];
+    const content = `
+    <div class="Rio"><a href="#1">${bar.content1}</a></div>
+    <div class="Sal"><a href="#3">${bar.content2}</a></div>
+    <div class="Br"><a href="#2">${bar.content3}</a></div>
+`;
+    campo.insertAdjacentHTML("beforeEnd", content);
 }
 
 function setValue(country){
-    link.innerHTML += `$${country.price}`
-    financeiro.setAttribute("value",`${country.price}`) 
+    const price = country.price;
+    link.innerHTML += `$${price}`;
+    financeiro.setAttribute("value",`${price}`); 
 }
 
-function createMain(main, i){
-    return `
+async function insertMain(campo, regiao){
+    const resposta = await jsonPaises();
+    //const main = resposta[`${regiao}`];
+    console.log(resposta[`${regiao}`])
+    const mains = resposta[`${regiao}`]
+    for(let main in mains){
+        const content =    `
     <div class="images">
-            <img src="${main.src}" alt="${main.alt}" style="width:100%" id="${main.id}">
+            <img src="${mains[main].src}" alt="${mains[main].alt}" style="width:100%" id="${mains[main].id}">
             <div class="desc">
-                <h2>${i}</h2>
+                <h2>${main}</h2>
                 <p>
-                    ${main.description}
+                    ${mains[main].description}
                 </p>
             </div>
         </div>
-    `
+    `;
+    campo.insertAdjacentHTML("beforeEnd", content);
+    }
 }
 
-function createFooter(){
-    return `<p>
+function insertFooter(campo){
+    const content = `<p>
     <i class="fas fa-horse" style="transform: scaleX(-1);"></i>
         HORSE COPYRIGHT © 2020 - Por Pedro & Paulo
     <i class="fas fa-horse"></i>
@@ -80,7 +80,8 @@ function createFooter(){
     <a href="#"><i class="fab fa-instagram-square"></i></a>
     <a href="#"><i class="fab fa-twitter-square"></i></a>
 </div>`
+    campo.insertAdjacentHTML("beforeEnd", content);
 }
 
 
-export {createHeader, createBar, createMain, createFooter, headers, header, bar, bars, main, footer, brasil, italia, japao, setValue, financeiro, link, mainBrasil, mainItalia, mainJapao};
+export {header, bar, main, footer, financeiro, link, setValue, insertHeader, insertBar, insertMain, insertFooter};
