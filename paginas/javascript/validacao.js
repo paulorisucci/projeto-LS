@@ -34,7 +34,7 @@ function validarDtNasc(dtNasc){
     return pattern.test(dtNasc);
 }
 function validarNumCel(numCel) {
-    const pattern = /^(\d{14})|(\(\d{3}\)\d{9})$/;
+    const pattern = /^(\d{12})|(\(\d{3}\)\d{9})$/;
     /// const pattern = /^(\(\d{3}\)\d{9})|(+\d{2}-\(\d{3}\)\d{9})|(\d{14})$/
 
     return pattern.test(numCel);

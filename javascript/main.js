@@ -1,14 +1,15 @@
-import paises from './database.js'
-
 const form = document.querySelector("#form")
 const main = document.querySelector("main")
 const footer = document.querySelector("footer")
 
-
-for(let pais of paises){
-    main.insertAdjacentHTML("beforeend", createPais(pais))
+async function carregarPaises(){
+    const resposta = await fetch('/javascript/database.json');
+    const paises = await resposta.json();
+    for(let pais of paises){
+        main.insertAdjacentHTML("beforeend", createPais(pais))
+    }
+    footer.insertAdjacentHTML("afterBegin",createFooter())
 }
-footer.insertAdjacentHTML("afterBegin",createFooter())
 
 form.onsubmit = (e) => {
     e.preventDefault();
@@ -47,3 +48,4 @@ function createFooter(){
 </div>`
 }
 
+carregarPaises();

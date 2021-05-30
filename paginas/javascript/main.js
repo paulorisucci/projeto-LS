@@ -1,9 +1,24 @@
-import {headers} from './database.js'
 
+async function json(){
+    const resposta = await fetch('/paginas/javascript/database.json');
+    const json = await resposta.json();
+    return json
+}
 
-const brasil = headers[0]
-const italia = headers[1]
-const japao = headers[2]
+json()
+    .then((json) => j = json)
+    .catch(console.log('Deu erro'));
+
+console.log(j)
+const brasil = j.headers[0]
+const italia = j.headers[1]
+const japao = j.headers[2]
+
+const bars = j.bars
+const headers = j.headers
+const mainBrasil = j.mainBrasil
+const mainItalia = j.mainItalia
+const mainJapao = j.mainJapao
 
 const header = document.querySelector("header#topo")
 const bar = document.querySelector(".container")
@@ -68,4 +83,4 @@ function createFooter(){
 }
 
 
-export {createHeader, createBar, createMain, createFooter, headers, header, bar, main, footer, brasil, italia, japao, setValue, financeiro, link};
+export {createHeader, createBar, createMain, createFooter, headers, header, bar, bars, main, footer, brasil, italia, japao, setValue, financeiro, link, mainBrasil, mainItalia, mainJapao};

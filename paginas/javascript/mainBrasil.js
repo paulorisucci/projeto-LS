@@ -1,5 +1,4 @@
-import {bars, mainBrasil} from './database.js'
-import {createHeader, createBar, createMain, createFooter, header, bar, main, footer, brasil, setValue, link} from './main.js'
+import {createHeader, createBar, createMain, createFooter, header, bar, main, footer, brasil, setValue, link, bars, mainBrasil} from './main.js'
 import storage from './localStorage.js'
 
 header.insertAdjacentHTML("afterbegin",createHeader(brasil))

@@ -1,5 +1,4 @@
-import { bars, mainJapao } from './database.js'
-import {createHeader, createBar, createMain, createFooter, header, bar, main, footer, japao, setValue} from './main.js'
+import {createHeader, createBar, createMain, createFooter, header, bar, main, footer, japao, setValue, bars, mainJapao} from './main.js'
 import storage from './localStorage.js'
 
 
